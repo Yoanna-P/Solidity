@@ -23,3 +23,47 @@ contract Arrays{
 }
 
 }
+
+contract enums{
+
+    enum shirtColor {RED, WHITE, BLUE}
+    shirtColor choice;
+    shirtColor constant defaultChoice = shirtColor.BLUE;
+
+    function setWhite() public{
+        choice = shirtColor.WHITE;
+    }
+
+    function getChoice() public view returns(shirtColor){
+        return choice;
+    }
+
+    function getDefaultChoice() public view returns(uint){
+        return uint(defaultChoice);
+    }
+
+}
+
+contract structs{
+    struct Movie {
+        string title;
+        string director;
+        uint movie_id;
+    }
+
+    Movie comedy;
+
+    function setMovie() public{
+        comedy = Movie("myTitle","myDirector",2);
+    }
+
+    function getId() public view returns(uint){
+       return comedy.movie_id;
+    }
+
+    function getTitle() public view returns(string memory){
+       return comedy.title;
+    }
+
+
+}
