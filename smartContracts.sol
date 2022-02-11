@@ -17,4 +17,9 @@ contract Arrays{
       return myArray.length;
   }
 
+  function remove(uint i) public {
+    delete myArray[i];
+    // remember that delete the does not delete the element, but only sets it to 0
+}
+
 }
