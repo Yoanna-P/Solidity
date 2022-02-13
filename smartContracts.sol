@@ -64,6 +64,32 @@ contract structs{
     function getTitle() public view returns(string memory){
        return comedy.title;
     }
+}
 
+contract learnMapping{
+    mapping(address => uint) public myMap;
 
+    function getAddress(address _addr) public view returns(uint){
+        return myMap[_addr];
+    }
+    function setAddress(address _addr, uint _i) public {
+        myMap[_addr]=_i;
+    }
+
+    function removeAddress(address _addr) public{
+        delete myMap[_addr];
+    }
+}
+
+contract Assignment{
+    struct Movie{
+        string title;
+        string director;
+    }
+
+    mapping(uint => Movie) public movie;
+
+    function addMovie(uint movie_id, string memory _title, string memory _director) public{
+        movie[movie_id]=Movie(_title, _director);
+    }
 }
