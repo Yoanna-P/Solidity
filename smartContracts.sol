@@ -92,4 +92,5 @@ contract Assignment{
     function addMovie(uint movie_id, string memory _title, string memory _director) public{
         movie[movie_id]=Movie(_title, _director);
     }
+
 }
